@@ -165,6 +165,8 @@ int syr(int n) {
 
 * c)
 ```java
+class q4c {
+  // Googling resulted in the following method:
   // Exponentiation by squaring
   // https://en.wikipedia.org/wiki/Exponentiation_by_squaring
   int exponentiation(int x, int n) {
@@ -175,6 +177,25 @@ int syr(int n) {
       return x * exponentiation(exponentiation(x, (n - 1) / 2), 2);
     return exponentiation(exponentiation(x, n / 2), 2);
   }
+
+  public static void main(String[] args) {
+    q4c go = new q4c();
+    System.out.println("Exponentiation by squaring:");
+    System.out.println("2^4 = " + go.exponentiation(2, 4));
+    System.out.println("---");
+    System.out.println("Exponentiation by method overloading:");
+    System.out.println("2^4 = " + go.exp(2, 4));
+  }
+
+  // However, this question can also be solved by overloading the exp() method
+  int exp(int x, int n) {
+      return exp(x, n ,1);
+  }
+  int exp(int x, int n, int result) {
+      if(n == 0) return result;
+      return exp(x, n-1, result * n);
+  }
+}
 ```
 
 ---
@@ -189,7 +210,16 @@ int syr(int n) {
 
 * b) c
 
-* c) `s.substring(0, s.length() - 1);`
+* c)
+```java
+// Assuming the question asks for the second last character
+// e.g. the "l" in "example", then:
+s.charAt(s.length()-2);
+
+// Assuming the question asks for the String from the start til the second
+// last character, e.g. "exampl" in "example", then:
+s.substring(0, s.length()-1);
+```
 
 * d)
 ```java
@@ -199,11 +229,13 @@ public class swapcdxy {
   public static void main(String[] args) throws Exception{
     BufferedReader inone = new BufferedReader(new FileReader(args[0]));
     int t = inone.read();
+    // We are assuming that we are to perform case-sensitive comparisons
+    // Since the question literally quotes lower-case characters
     while(t != -1) {
       if(t == (int)'a')
         System.out.print('x');
-      else if(t == (int)'x')  // We are assuming that there is a typo in the paper
-        System.out.print('a');
+      else if(t == (int)'b')
+        System.out.print('y');
       else
         System.out.print((char)t);
       t = inone.read();
@@ -216,12 +248,12 @@ public class swapcdxy {
 
 ## Question 6
 
-* a) peach
+* a) `peach`
 
 * b)
 ```java
 public class Date {
-  public int d, m, y;
+  private int d, m, y;
   public Date(int d, int m, int y) {
     this.d = d;
     this.m = m;
@@ -232,8 +264,8 @@ public class Date {
 
 ```java
 public class Person {
-  public String firstName, lastName;
-  public Date d;
+  private String firstName, lastName;
+  private Date d;
 
   public Person(String firstName, String lastName, Date d) {
       this.firstName = firstName;
@@ -246,7 +278,7 @@ public class Person {
 * c)
 ```java
 public class PersonOccupation extends Person {
-  public String occupation;
+  private String occupation;
 
   public PersonOccupation(String firstName, String lastName, Date d, String occupation) {
       super(firstName, lastName, d);
@@ -262,7 +294,11 @@ public class q6d {
     java.util.Random r = new java.util.Random();
     return r.nextInt(6) + 1;
   }
-  public static void main(String[] args) {
+
+  // for() loop method
+  // While (no pun intended) this method works, we generally use while() loops
+  // for when we do not know the exact number of times to run the loop for.
+  /*public static void main(String[] args) {
     int consecutive = 0, i = 1;
     for(i = 1; consecutive != 3; i++) {
       if(roll() == 5)
@@ -271,6 +307,20 @@ public class q6d {
         consecutive = 0;
     }
     System.out.println(i);
+}*/
+
+  // while() loop method
+  public static void main(String[] args) {
+      int consecutiveFives = 0, count = 0;
+      while(consecutiveFives < 3) {
+          if(roll() == 5) {
+              consecutiveFives++;
+          } else {
+              consecutiveFives = 0;
+          }
+          count++;
+      }
+      System.out.println(count);
   }
 }
 ```

@@ -1,6 +1,6 @@
 public class Person {
-  public String firstName, lastName;
-  public Date d;
+  private String firstName, lastName;
+  private Date d;
 
   public Person(String firstName, String lastName, Date d) {
       this.firstName = firstName;
