@@ -42,8 +42,34 @@ public class NMultiplesOfK{
     int k = Integer.parseInt(args[1]);
     
     for(int i=1;i<=n;i++){
-      System.out.print(k*i+" ");
+      System.out.print((k*i)+" ");
     }
+  }
+}
+```
+
+```java
+public class CopyFileInCapitals{
+  public static void main(String[] args){
+    try{
+      String input = args[0];
+      String output = args[1];
+
+      FileReader fr = new FileReader(input);
+      FileWriter fw = new FileWriter(output);
+      int t = fr.read();
+      while(t != -1){
+        if(t >=97 && t <=122)
+        {
+          fw.write(Character.toUpperCase((char)t));
+        }
+        else fw.write((char)t);
+      }
+
+      fr.close();
+      fw.close();
+    }
+    catch(Exception ex){}
   }
 }
 ```
