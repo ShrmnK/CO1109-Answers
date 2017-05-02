@@ -303,4 +303,7 @@ boolean equals(Fraction f)
 }
 ```
 
-Note: All the above answers may have one or many solutions. And di confirm each by compiling it. Drafted by @shah-smit
+Note: All the above answers may have one or many solutions. And di confirm each by compiling it.
+
+###### Contributors
+> These people helped to make the above answers: @shah-smit
