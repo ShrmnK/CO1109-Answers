@@ -302,3 +302,6 @@ public String reverse(String word){
   return rev;
 }
 ```
+
+###### Contributors
+> These people helped to make the above answers: @shah-smit
