@@ -73,15 +73,12 @@ static double average(Vector v){
 ```java
 void printChars(int start, int end, String s){
   int len = s.length()-1;
-  if(len > 0 && start >= len && end <= s)
-  {
-    for(int i=start; i<=end; i++)
-    {
+  if(len > 0 && start >= len && end <= s){
+    for(int i=start; i<=end; i++){
       System.out.print(s.charAt(i));
     }
   }
-  else
-  {
+  else{
     System.out.println("Invalid String entered");
   }
 }
@@ -100,8 +97,7 @@ void printChars(int start, int end, String s){
 * b) ii)
 ```java
 int i=0;
-while(i<length/2)
-{
+while(i<length/2){
   int temp = ta[i];
   ta[i] = ta[length - i -1];
   ta[length - i - 1] = temp
@@ -113,16 +109,12 @@ while(i<length/2)
 * c) i)
 
 ```java
-boolean isSum(double[][] s, double[][] a, double[][] b)
-{
+boolean isSum(double[][] s, double[][] a, double[][] b){
   boolean result = true;
-  for(int i = 0; i<a.length; i++)
-  {
-    for(int j=0; j<a[0].length; j++)
-    {
+  for(int i = 0; i<a.length; i++){
+    for(int j=0; j<a[0].length; j++){
       double sum = a[i][j] + b[i][j];
-      if(sum != s[i][j])
-      {
+      if(sum != s[i][j]){
         result false;
         break;
       }
@@ -135,8 +127,7 @@ boolean isSum(double[][] s, double[][] a, double[][] b)
 * c) ii)
 
 ```java
-int whichIsSum(double[][] s, double[][] a, double[][] b)
-{
+int whichIsSum(double[][] s, double[][] a, double[][] b) {
   if(isSum(s,a,b){ return 1; }
   else if(isSum(a,s,b){ return 2; }
   else if(isSum(b,a,s){ return 3; }
@@ -161,24 +152,21 @@ int whichIsSum(double[][] s, double[][] a, double[][] b)
 * c)
 
 ```java
-int power(int m, int n)
-{
-if(n==0) return 1;
-else { return m*power(m,n-1);}
+int power(int m, int n){
+  if(n==0) return 1;
+  else { return m*power(m,n-1);}
 }
 ```
 
 * d)
 
 ```java
-int power2(int m, int n)//m^n
-{
-int product = 1;
-for(int i=n; i>=0; i--)
-{
-  product *= m;
-}
-return product;
+int power2(int m, int n){
+  int product = 1;
+  for(int i=n; i>=0; i--){
+    product *= m;
+  }
+  return product;
 }
 ```
 
@@ -192,11 +180,9 @@ return product;
 
 * b) 
 ```java
-public static String reverseString(String original)
-{
+public static String reverseString(String original){
   String rev = "";
-  for(int i=original.length()-1; i>=0; i--)
-  {
+  for(int i=original.length()-1; i>=0; i--){
     rev += original.charAt(i);
   }
   return rev;
@@ -207,8 +193,7 @@ public static String reverseString(String original)
 
 * c)
 ```java
-public static String sortString(String original)
-{
+public static String sortString(String original){
   char[] arr = original.toCharArray();
   Arrays.sort(arr);
   String result = new String(arr);
@@ -220,11 +205,9 @@ public static String sortString(String original)
 
 * d)
 ```java
-public static void playLines(String filename)throws Exception
-{
+public static void playLines(String filename)throws Exception{
   Scanner in = new Scanner(new FileReader(filename));
-  while(in.hasNextLine())
-  {
+  while(in.hasNextLine()){
     String line  = in.nextLine();
     line = sortString(line);
     line = reverseString(line);
@@ -256,14 +239,12 @@ public static void playLines(String filename)throws Exception
 public class Child extends Parent
 {
   //overrides
-  public int doNothing(int i)
-  {
+  public int doNothing(int i){
     return i+1;
   }
   
   //overloads
-  public int doNothing(String s)
-  {
+  public int doNothing(String s){
     return 1;
   }
 }
@@ -272,8 +253,7 @@ public class Child extends Parent
 
 * e) i)
 ```java
-Fraction(int numer, int denom)
-{
+Fraction(int numer, int denom){
   this.numer = number;
   this.denom = denom;
 }
@@ -281,8 +261,7 @@ Fraction(int numer, int denom)
 
 * e) ii)
 ```java
-String toString()
-{
+String toString(){
   String output = numer +"/"+ demon;
   return output;
 }
@@ -290,20 +269,15 @@ String toString()
 
 * e) iii)
 ```java
-boolean equals(Fraction f)
-{
-  if(f.number == numer && f.demon == demon)
-  {
+boolean equals(Fraction f){
+  if(f.number == numer && f.denom == denom){
     return true;
   }
-  else
-  {
+  else{
     return false;
   }
 }
 ```
-
-Note: All the above answers may have one or many solutions. And di confirm each by compiling it.
 
 ###### Contributors
 > These people helped to make the above answers: @shah-smit
