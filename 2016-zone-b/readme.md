@@ -221,8 +221,7 @@ Note: In the Question 4d, Writing message in exception is not necessary as there
 
 * b) i)
 ```java
-public static String eightBall()
-{
+public static String eightBall(){
   Random r = new Random();
   int randomA = r.nextInt(6);
   return answers[randomA];
@@ -304,4 +303,4 @@ public String reverse(String word){
 ```
 
 ###### Contributors
-> These people helped to make the above answers: @shah-smit
+> @shah-smit
